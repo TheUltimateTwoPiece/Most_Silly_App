@@ -89,7 +89,7 @@ struct ContentView: View {
                 }
 
                 Divider()
-                Text("USELESS BUTTON COLLECTION")
+                Text("USELESS BUTTON COLLECTION (scroll down)")
                     .font(.headline)
                     .bold()
 
@@ -104,7 +104,7 @@ struct ContentView: View {
         Button("🧠 Check Brain Cells") {
                     message = brainCell
                         ? "Your brain cell is working overtime."
-                        : "Brain cell not found. Please reinstall."
+                        : "Brain cell not found."
                 }
 
         Button("🗿 Check Your Aura") {
@@ -114,43 +114,6 @@ struct ContentView: View {
                         "Aura: 0.0001",
                         "Aura: certified refrigerator",
                         "Aura: MOAI APPROVED 🗿"
-                    ].randomElement()!
-                }
-
-        Button("📢 Breaking News") {
-                    message = [
-                        "Your fridge has joined the government.",
-                        "A banana has become a millionaire.",
-                        "Scientists discover that water is wet.",
-                        "Your chair has resigned.",
-                        "Local potato refuses to elaborate."
-                    ].randomElement()!
-                }
-
-        Button("🎰 Spin the Useless Wheel") {
-                    let result = Int.random(in: 1...4)
-
-                    if result == 1 {
-                        coins += 10
-                        message = "JACKPOT! 10 COINS! 🪙"
-                    } else {
-                        message = "You won absolutely nothing. 💀"
-                    }
-                }
-
-             Button("🪙 Flip a Coin") {
-                    message = Bool.random()
-                        ? "HEADS! YOUR DESTINY IS BANANA."
-                        : "TAILS! YOUR DESTINY IS POTATO."
-                }
-
-                Button("💀 Roast Me") {
-                    message = [
-                        "Your Wi-Fi has more connections than you.",
-                        "Your brain is running on airplane mode.",
-                        "Even the duck has higher intelligence.",
-                        "You have the survival instincts of a spoon.",
-                        "Your aura just filed for bankruptcy."
                     ].randomElement()!
                 }
 
@@ -172,10 +135,6 @@ struct ContentView: View {
 
                 Button("💸 Check Bank Account") {
                     message = "Your Dodge Coins are not legal tender."
-                }
-
-                Button("🌎 Save the World") {
-                    message = "World saved! Unfortunately, it respawned."
                 }
             }
             .font(.title3)
@@ -290,10 +249,9 @@ struct ContentView: View {
             Text("❤️ Remaining Lives: \(lives)")
             Text("🪙 Total Coins: \(coins)")
             Text("🎯 Memes Caught: \(memesCaught)")
-
-            Text("🍌 Banana Hat: \(bananaHat ? "YES" : "NO")")
-            Text("🧠 Brain Cell: \(brainCell ? "YES" : "NO")")
-            Text("🪨 Pet Rock: \(petRock ? "YES" : "NO")")
+            Text("🍌 Banana Hat: \(bananaHat ? "useless junk" : "NO")")
+            Text("🧠 Brain Cell: \(brainCell ? "u still have 0" : "NO")")
+            Text("🪨 Pet Rock: \(petRock ? "it does nothing" : "NO")")
 
             Spacer()
 
@@ -312,12 +270,12 @@ struct ContentView: View {
 
             score += 1
             memesCaught += 1
-            message = "I guess you caught it bro 🔥"
+            message = "I guess you caught it bro"
 
         } else {
 
             loseLife()
-            message = "very slow no way you fell for that"
+            message = " no way you fell for that"
         }
 
         finishTurn()
@@ -356,18 +314,18 @@ struct ContentView: View {
         if lives <= 0 {
             gameOver = true
             coins += score
-            message = "GAME OVER! YOU EARNED \(score) COINS."
+            message = "YOU LOSE!HAHA! YOU EARNED \(score) COINS."
             return
         }
 
         if Int.random(in: 1...8) == 1 {
 
             message = [
-                "🚨 Your fridge has declared war.",
-                "🥔 You have been promoted to potato.",
+                " Your fridge has declared war cus u eat too much out of it.",
+                "🥔 You have been turned to potato.",
                 "🦆 Duck inspection in progress.",
-                "🧠 Brain cell disconnected.",
-                "🍌 Banana detected in your location."
+                " son? that was a bad meme.",
+                "🍌 Banana detected in your location. WATCH OUT AH"
             ].randomElement()!
         }
 
